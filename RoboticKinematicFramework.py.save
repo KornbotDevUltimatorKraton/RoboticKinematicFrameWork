@@ -1,0 +1,86 @@
+import sys # import the system function
+import numpy as np # Math for the analytic the matrix kinematrix 
+import math # The math for the calculation function of the kinematic framework 
+import scipy  # Function for the machinelearning learning from the csv file function 
+import csv # Record the map of the position movement 
+from nanpy import(ArduinoApi,SerialManager) # Robotic arm control serial function 
+from nanpy import Servo 
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+               # Robotic Arm Sensory input and the control function 
+# Servo part for the robotic arm 
+servo3e = Servo(3)
+servo3u = Servo(4)
+servo1u = Servo(5)
+servo1e = Servo(8)
+servo2u = Servo(9)
+servo2e = Servo(10)
+          # Servo for the robotic wrist of the arm 
+servoWrist= Servo(43) # Wrist servo  
+servowristrotate = Servo(44) # Wrist rotate servo 
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+try: 
+   connectionHand = SerialManager('/dev/ttyACM0',115200) # Serial manager function Hand 
+   a = ArduinoApi(connection=connectionHand) # The connection hand function for the serial control 
+except: 
+    print("Please check Serial Hand connection")
+try: 
+   connectionBody = SerialManager('/dev/ttyACM1',115200) #Serial Mamnanger S
+   b = ArduinoApi(connection=connectionBody) # The connection Body function for control the 3 stepper motors at the body
+except: 
+   print("Please check the Serial Body connection") # Serial body function 
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        # Robotic Sensory and control function of the robotic arm 
+#Hand Part 
+     # Servo part for the robotic arm 
+servo3e = Servo(3)
+servo3u = Servo(4)
+servo1u = Servo(5)
+servo1e = Servo(8)
+servo2u = Servo(9)
+servo2e = Servo(10)
+          # Servo for the robotic wrist of the arm 
+servoWrist= Servo(43) # Wrist servo  
+servowristrotate = Servo(44) # Wrist rotate servo 
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>$
+  # Stepper motor at the finger
+#Finger 1 
+a.pinMode(11,a.OUTPUT) #dir
+a.pinMode(12,a.OUTPUT) #step 
+#Finger 2  
+a.pinMode(2,a.OUTPUT)  #dir
+a.pinMode(6,a.OUTPUT)  #step 
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>$
+    #Stepper motor Motor power cotrol function
+a.pinMode(29,a.OUTPUT) #Stepper motor Base power on/off
+a.pinMode(30,a.OUTOUT) #Stepper motor Shoulder power on/off 
+a.pinMode(31,a.OUTPUT) #Stepper motor Elbow power on/off 
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   #Body part function of the  robotic arm  control and sensory 
+#Base function for the robotic arm 
+b.pinMode(2,b.OUTPUT) # dir 
+b.pinMode(3,b.OUTPUT) # step 
+#Shoulder function for the robotic arm 
+b.pinMode(4,b.OUTPUT) # dir 
+b.pinMode(5,b.OUTPUT) # step
+#Elbow function for the robotic arm 
+b.pinMode(8,b.OUTPUT) #dir 
+b.pinMode(9,b.OUTPUT) #step  
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+       #Robotics Sensory function for the Sensor input option 
+
+
+def BarrettHandFunction(): 
+
+
+
+def BodyFucntion(): 
+
+
+
+# Kinematic calculation function 
+def KinematicBodyandcontrol(x,y,z,AngleS,AngleH,Anglez,AngleE,AngleB,): 
+       
+
+
+
+
